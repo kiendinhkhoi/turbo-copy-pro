@@ -1,0 +1,39 @@
+{
+  "name": "turbo-copy-pro",
+  "version": "1.0.0",
+  "description": "Turbo Copy Pro - Fast multi-source file copy utility with pattern matching",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "pack": "electron-packager . \"Turbo Copy Pro\" --platform=win32 --arch=x64 --out=dist --overwrite --icon=icon.ico --ignore=dist"
+  },
+  "author": "Turbo Copy Pro",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^26.8.1",
+    "electron-packager": "^17.1.2"
+  },
+  "build": {
+    "appId": "com.turbocopy.pro",
+    "productName": "Turbo Copy Pro",
+    "win": {
+      "target": [
+        "nsis",
+        "msi"
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico"
+    },
+    "msi": {
+      "oneClick": false,
+      "perMachine": true
+    }
+  }
+}
